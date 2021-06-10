@@ -44,25 +44,21 @@ program Boys1
   real :: n, hypgeo, a, b, z, T, p1, p2, hgeo, bois!, debugger
   integer :: i, j, k !, a, b
 
-  !  Write(*,*) "Provide argument of the Boys function"
-  !  Read(*,*) T
+    Write(*,*) "Provide argument of the Boys function"
+    Read(*,*) T
 
-  !  Write(*,*) "Provide n of the desired Boys function"
-  !  Read(*,*) n
-  do j = 0, 5
+    Write(*,*) "Provide n of the desired Boys function"
+    Read(*,*) n
 
-    n = j
     a = n + 0.5
     b = n + 1.5
 
-    write(*,*) "Para m igual a", n
+!    write(*,*) "Para m igual a", n
 
-    do k = 0, 10
-      T = k/10.
       z = (-1)*T
       hgeo = 0
       ! Generate hypergeometric function
-      do i = 0, 20
+      do i = 0, 50
         p1 = (upfact(a, i)) / (upfact(b, i))
         if (i == 0) THEN
           p2 = 1
@@ -75,9 +71,5 @@ program Boys1
       !  debugger = upfact(2.4, 5)
       !  Write(*,*) debugger
       Write(*,*) bois
-      bois = 0
 
-    end do
-
-  end do
 end program Boys1
